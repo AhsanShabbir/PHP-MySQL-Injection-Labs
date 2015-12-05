@@ -1,1 +1,1 @@
-<?php $username ="root"; $password =""; $database ="testhello"; $host ="localhost";?>
+<?php $username ="root"; $password =""; $database ="ahsan044"; $host ="localhost";?>

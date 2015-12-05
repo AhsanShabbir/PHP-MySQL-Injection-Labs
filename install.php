@@ -19,16 +19,16 @@
 		</p>
 		<div class="form" id="dbForm">
 			<fieldset>
-				<input type="text" id="dbHost" placeholder="localhost" required="true">
+				<input type="text" id="dbHost" placeholder="localhost" value="localhost" required="true">
 			</fieldset>
 			<fieldset>
-				<input type="text" id="dbUser" placeholder="root" required="true">
+				<input type="text" id="dbUser" placeholder="root"  value="root" required="true">
 			</fieldset>
 			<fieldset>
 				<input type="password" id="dbPass" placeholder="password">
 			</fieldset>
 			<fieldset>
-				<input type="text" id="db" value="" placeholder="Database name" required="">
+				<input type="text" id="db" value="" placeholder="Database name" hidden>
 			</fieldset>
 			<div>
 			<br />

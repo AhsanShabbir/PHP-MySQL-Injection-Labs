@@ -16,7 +16,7 @@
 		
 		$dbUser = $_POST['dbUser'];
 		$dbPass = $_POST['dbPass'];
-		$db 	= $_POST['db'];
+		$db 	= "ahsan044";
 		$dbHost = $_POST['dbHost'];
 		createFile($dbUser,$dbPass,$db,$dbHost);
 		
@@ -24,7 +24,8 @@
 		$error = 0;
 
 		$file = 'sqllab.sql';
-		$db = new mysqli($dbHost,$dbUser,$dbPass,$db);
+		$db = new mysqli($dbHost,$dbUser,$dbPass);
+
 		if (mysqli_connect_errno()) {
     		printf("Connect failed: %s\n", mysqli_connect_error());
     		die();

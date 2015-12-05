@@ -1,18 +1,18 @@
 $(document).ready(function(){
-	var $doc = atob('PGRpdj48cCBjbGFzcz0idGV4dC1jZW50ZXIiPiZsdDtDb2RlZCZndDsgYnkgQGFoc2FuMDQ0ICA8YnIgLz4KCQkgCQkJIGdpdGh1Yi5jb20vYWhzYW4wNDQKCQkgCQk8L3A+PC9kaXY+');
+     var $doc = atob('PGRpdj48cCBjbGFzcz0idGV4dC1jZW50ZXIiPiZsdDtDb2RlZCZndDsgYnkgQGFoc2FuMDQ0ICA8YnIgLz4KCQkgCQkJIGdpdGh1Yi5jb20vYWhzYW4wNDQKCQkgCQk8L3A+PC9kaXY+');
     $($doc).attr('id','credits').appendTo('.container'); 
     $("#installDB").click(function(){
 
     	$("#status").text("Please wait...");
 
-    	var $dbName = $("#db").val();
+    	//var $dbName = $("#db").val();
     	var $dbUser = $("#dbUser").val();
     	var $dbPass = $("#dbPass").val();
       var $dbHost = $("#dbHost").val();
     	var dbData = {
 			dbUser : $dbUser,
 			dbPass : $dbPass,
-			db 	   : $dbName,
+			//db 	   : $dbName,
       dbHost : $dbHost,
 			installDB: 1
 		};

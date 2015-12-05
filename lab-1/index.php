@@ -1,52 +1,52 @@
-<?php
-	include('../db/config.php');
-	$db = new mysqli($host,$username,$password,$database);
-	if($db->connect_errno){
-		die($db->connect_errno);
-	}
-	$sql = "Select * from products";
-	
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SQLi lab # 1</title>
+	<title>SQLi Lab # 2 Login</title>
 	<link href='http://www.ahsanshabbir.com/favicon.ico' rel='icon' type='image/x-icon'/>
 	<link href='../assets/css/bootstrap.min.css' rel='stylesheet'/>
 	<script src='../assets/js/jquery.js'></script>
-	<script src='../assets/js/js101.js'></script>
+	<script src='../assets/js/lab2.js'></script>
+
 </head>
 <body>
-<div class="container">
-	<h2> SQLi Injection Lab # 1 </h2>
-	<hr />
-	<p class="lead">
-		Product list
-	</p>
-			
-		<?php if($products = $db->query($sql)):?>
-
-			<?php while($product = $products->fetch_object()): ?>
-
-				<div class="row">
-  					<div class="col-sm-4">
-						<?=$product->name;?> 
-					</div>
-					<hr />
-					<div class="col-sm-4">
-						<img src="../assets/img/products/<?=$product->photo;?>" height=200 width=200 />
-					</div>
-						<div class="col-sm-4">
-							<a role="button" class="btn btn-success btn-large" href="view.php?id=<?=$product->id;?>">View Details </a><br />
-						</div>
-				</div>
-			
-			<?php endwhile;?>
-		<?php endif; ?>
+	<div class="container" align="center">
+		<h2 align="left">
+			SQLi Lab # 2 
+		</h2>
+		<h4 class="alert alert-success" role="alert" align="right">
+	    <?php include('../assets/templates/social.php');?>
+		</h4>
 		<hr />
+		<legend>Login Page</legend>
+		<?php if(isset($_GET['msg'])):?>
+			<div id="msg" class="alert alert-info" role="alert">
+				<?php echo $_GET['msg'];?>
+			</div>
+		<?php endif;?>
+		<div class="form">
+			<div id="error" class="alert alert-danger" role="alert" hidden>
+				
+			</div>
+			<div id="success" class="alert alert-success" role="alert" hidden>
+				
+			</div>
+			<fieldset>
+				<input type="text" id="username" name="username"  value="admin" placeholder="username" required>
+			</fieldset>
+			<fieldset>
+				<input type="password" id="password" value="admin123" name="password" placeholder="password" required>
+			</fieldset>
+			<br />
+			<fieldset>
+				<input  type="button" id="checkLogin" name="checkLogin" class="btn btn-primary" value="Login">
+			</fieldset>
+			
+
+		</div>
+
+		<hr />
+	</div>
 	
-</div>
 </body>
 </html>
